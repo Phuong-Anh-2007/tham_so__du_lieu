@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị nhỏ nhất trong mảng</title>
+</head>
+    <button onclick="call()" style="text-align: center;">Click</button>
+<body>
+    <script>
+        function tim_min(arr) {
+            let min = arr[0];
+            for (let i=0; i < arr.length; i++) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89];
+        let arr3 =[], arr4 = [0, 0, 0, 0, 0, 0];
+
+        function call() {
+            document.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '+'Mảng 1: '+arr1+'<br>');
+            document.write('-Giá trị nhỏ nhất trong mảng này là: '+tim_min(arr1)+'<br>');
+            document.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '+'    Mảng 2: '+arr2+'<br>');
+            document.write('-Giá trị nhỏ nhất trong mảng này là: '+tim_min(arr2)+'<br>');
+            document.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '+'    Mảng 3: '+arr3+'<br>');
+            document.write('-Giá trị nhỏ nhất trong mảng này là: '+tim_min(arr3)+'<br>');
+            document.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '+'    Mảng 4: '+arr4+'<br>');
+            document.write('-Giá trị nhỏ nhất trong mảng này là: '+tim_min(arr4)+'<br>');
+        }
+        
+    </script>
+</body>
+</html>

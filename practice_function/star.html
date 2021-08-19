@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài chòm sao</title>
+</head>
+<body>
+   <h1 style="text-align: center;">⭐ Tìm chòm sao của ngôi sao ⭐</h1>
+    <table style="margin-left:auto; margin-right:auto; text-align:center">
+        
+        <tr>
+            <td colspan="2"><input type="text" style="border:0" name="star" id="star" placeholder="Nhập vào một ngôi sao ⭐" onkeypress="key(this.value)"></td>
+        <tr>
+            <td id="result"></td>
+        </tr>
+        <tr>
+            <td id="picture"></td>
+        </tr>
+        <tr>
+            <td id="watch"></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    let arr_1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' , 'Regulus'];
+    let arr_2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major' ,'Leo'];
+    let img = [ 'src="img/ursa-minor.jpg" alt="Ursa Minor"',
+                'src="img/taurus.jpg" alt="Tarurus"',
+                'src="img/cygnus.jpg" alt="Cygnus"',
+                'src="img/lyra.jpg" alt="Lyra"',
+                'src="img/auila.jpg" alt="Aquila"',
+                'src="img/ursa-major.jpg" alt="Ursa Major"',
+                'src="img/leo.jpg" alt="Leo"'];
+
+    function find(string, arr) {
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == string) {
+                document.getElementById('result').innerHTML='Ngôi sao này thuộc chòm: '+arr_2[i];
+                document.getElementById('picture').innerHTML='<img style="width:25%"'+img[i]+'>';
+                flag = true;
+            }
+        }
+        if (flag == false) {
+            document.getElementById('result').innerHTML='Ngôi sao của bạn không nằm trong các chòm sao của chúng tôi';
+            document.getElementById('picture').innerHTML='<button onclick="wacth_star()">Xem các chòm sao</button>'
+        }
+    }
+
+    function wacth_star() {
+        document.getElementById('watch').innerHTML='<hr>'+arr_2
+    }
+
+    function key(e) {
+        if (window.event) {
+            e = window.event.keyCode;
+        }
+        if (e =='13') {
+            find(document.getElementById('star').value,arr_1);
+            document.getElementById('watch').innerHTML="";
+        }
+    }
+</script>
